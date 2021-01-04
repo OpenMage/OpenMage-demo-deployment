@@ -43,7 +43,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.OPENMAGE_DEMO_DEPLOY_RSA }}
-          script: ln -nsf ~/github_deploy/build_${{ github.run_number }} ~/github_latest
+          script: ln -nsf ~/github_deploy/build_${{ github.run_number }}/htdocs ~/github_latest
       - name: clean old deployments
         continue-on-error: true
         uses: appleboy/ssh-action@master
