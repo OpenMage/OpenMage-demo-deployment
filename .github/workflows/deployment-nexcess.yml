@@ -12,7 +12,7 @@ jobs:
         with:
           command: install
           args: --working-dir=./src/
-      - run: cd ./src && bash scripts/removeParts.sh
+      - run: cd ./src && bash scripts/removeParts.sh && bash scripts/applyChanges.sh
       - run: ls -la ./ ./src
       - name: Deploy to Cotya server
         uses: easingthemes/ssh-deploy@v2.0.7
