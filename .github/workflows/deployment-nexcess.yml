@@ -14,7 +14,7 @@ jobs:
           args: --working-dir=./src/
       - run: cd ./src && bash scripts/removeParts.sh && sudo bash scripts/applyChanges.sh
       - run: ls -la ./ ./src
-      - name: Deploy to Cotya server
+      - name: Deploy to server
         uses: easingthemes/ssh-deploy@v2.0.7
         env:
           SSH_PRIVATE_KEY: ${{ secrets.OPENMAGE_DEMO_DEPLOY_RSA }}
