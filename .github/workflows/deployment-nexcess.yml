@@ -1,6 +1,8 @@
 name: "Deployment Nexcess"
 on:
   push:
+    branches:
+      - "main"
 
 jobs:
   deploy:

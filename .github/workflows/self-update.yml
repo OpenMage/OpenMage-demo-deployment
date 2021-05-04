@@ -1,0 +1,33 @@
+name: "Self Update"
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Target Version'
+        required: true
+        default: '19.*'
+
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Composer Install
+        uses: php-actions/composer@v2
+        with:
+          command: install
+          args: --working-dir=./src/
+      - name: Composer update
+        uses: php-actions/composer@v2
+        with:
+          command: update
+          args: --working-dir=./src/ --with openmage/magento-lts:${{ github.event.inputs.target }}
+      - run: git add src/composer.json src/composer.lock
+      - name: "git Push"
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -m "workflow selfupdate with target ${{ github.event.inputs.target }}"
+          git push origin HEAD:${GITHUB_REF#refs/heads/}
+
