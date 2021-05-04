@@ -1,14 +1,17 @@
 {
   "name": "cotya/openmage-demo",
   "require": {
-    "aydin-hassan/magento-core-composer-installer": "*",
+    "aydin-hassan/magento-core-composer-installer": "dev-master",
     "openmage/magento-lts": "19.*",
     "magento-hackathon/magento-composer-installer": "*",
     "cweagans/composer-patches": "^1.6",
     "composer/composer": "^2"
   },
   "config": {
-    "platform-check": false
+    "platform-check": false,
+    "platform": {
+      "php": "8.0"
+    }
   },
   "extra": {
     "//patches-file": "patches/composer.patches.json",
