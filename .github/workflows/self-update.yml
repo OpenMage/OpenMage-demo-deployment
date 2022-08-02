@@ -17,12 +17,12 @@ jobs:
         uses: php-actions/composer@v2
         with:
           command: install
-          args: --working-dir=./src/
+          args: --working-dir=./src/ --ignore-platform-reqs
       - name: Composer update
         uses: php-actions/composer@v2
         with:
           command: update
-          args: --working-dir=./src/ --with openmage/magento-lts:${{ github.event.inputs.target }}
+          args: --working-dir=./src/ --with openmage/magento-lts:${{ github.event.inputs.target }} --ignore-platform-reqs
       - run: git add src/composer.json src/composer.lock
       - name: "git Push"
         run: |
