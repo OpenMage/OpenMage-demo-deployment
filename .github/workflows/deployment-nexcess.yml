@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Composer Install
-        uses: php-actions/composer@v2
+        uses: php-actions/composer@v6
         with:
           command: install
-          args: --working-dir=./src/
+          args: --working-dir=./src/ --ignore-platform-reqs
       - run: cd ./src && bash scripts/removeParts.sh && sudo bash scripts/applyChanges.sh
       - run: ls -la ./ ./src
       - name: Deploy to server
