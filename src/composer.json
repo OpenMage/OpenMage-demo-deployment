@@ -10,6 +10,7 @@
   "config": {
     "platform-check": false,
     "allow-plugins": {
+      "cweagans/composer-patches": true,
       "aydin-hassan/magento-core-composer-installer": true,
       "magento-hackathon/magento-composer-installer": true
     },
