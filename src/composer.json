@@ -9,6 +9,10 @@
   },
   "config": {
     "platform-check": false,
+    "allow-plugins": {
+      "aydin-hassan/magento-core-composer-installer": true,
+      "magento-hackathon/magento-composer-installer": true
+    },
     "platform": {
       "php": "8.0"
     }
