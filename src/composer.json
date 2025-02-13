@@ -2,7 +2,7 @@
   "name": "cotya/openmage-demo",
   "require": {
     "aydin-hassan/magento-core-composer-installer": "2.0",
-    "openmage/magento-lts": "19.*",
+    "openmage/magento-lts": "20.*",
     "magento-hackathon/magento-composer-installer": "*",
     "cweagans/composer-patches": "^1.6",
     "composer/composer": "^2"
@@ -15,7 +15,7 @@
       "magento-hackathon/magento-composer-installer": true
     },
     "platform": {
-      "php": "8.0"
+      "php": "8.2"
     }
   },
   "extra": {
