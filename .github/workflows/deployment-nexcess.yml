@@ -14,7 +14,7 @@ jobs:
         uses: php-actions/composer@v6
         with:
           command: install
-          args: --working-dir=./src/ --ignore-platform-reqs
+          args: --working-dir=./src/
       - run: cd ./src && bash scripts/removeParts.sh && sudo bash scripts/applyChanges.sh
       - run: ls -la ./ ./src
       - name: Deploy to server
