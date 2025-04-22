@@ -20,7 +20,7 @@ jobs:
           # See https://github.com/php-actions/composer/issues/120
           version: 2.8.1
           command: install
-          args: --working-dir=./src/ --ignore-platform-reqs
+          args: --working-dir=./src/ --ignore-platform-req=ext-*
       - name: Composer update
         uses: php-actions/composer@v6
         with:
@@ -28,7 +28,7 @@ jobs:
           # See https://github.com/php-actions/composer/issues/120
           version: 2.8.1
           command: update
-          args: --working-dir=./src/ --with openmage/magento-lts:${{ github.event.inputs.target }} --ignore-platform-reqs
+          args: --working-dir=./src/ --with openmage/magento-lts:${{ github.event.inputs.target }} --ignore-platform-req=ext-*
       - run: git add src/composer.json src/composer.lock
       - name: "git Push"
         run: |
