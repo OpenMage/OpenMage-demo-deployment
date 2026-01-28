@@ -7,6 +7,9 @@
     "cweagans/composer-patches": "^1.6",
     "composer/composer": "^2"
   },
+  "replace": {
+    "empiricompany/openmage_ignition": "*"
+  },
   "config": {
     "platform-check": false,
     "allow-plugins": {
